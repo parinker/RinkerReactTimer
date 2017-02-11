@@ -1,6 +1,5 @@
 var React = require('react');
 var {Link, IndexLink} = require('react-router');
-var applicationStyles = require('applicationStyles');
 
 var Nav = React.createClass({
   render: function() {
@@ -22,7 +21,6 @@ var Nav = React.createClass({
         </div>
       </div>
     );
-
   }
 });
 

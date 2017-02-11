@@ -1,6 +1,5 @@
 var React = require('react');
 var Nav = require('Nav');
-var applicationStyles = require('applicationStyles');
 
 var Main = (props) => (
   <div>

@@ -6,30 +6,28 @@ module.exports = {
     'script!foundation-sites/dist/foundation.min.js',
     './app/app.jsx'
   ],
-
   externals: {
     jquery: 'jQuery'
   },
-
   plugins: [
-    new webpack.ProvidePlugin( {'$': 'jquery', 'jQuery': 'jquery'} )
+    new webpack.ProvidePlugin({
+      '$': 'jquery',
+      'jQuery': 'jquery'
+    })
   ],
-
   output: {
     path: __dirname,
     filename: './public/bundle.js'
   },
-
   resolve: {
     root: __dirname,
     alias: {
       Main: 'app/components/Main.jsx',
-      Nav: 'app/components/Nav.jsx',
-      applicationStyles: 'app/styles/app.scss'
+      applicationStyles: 'app/styles/app.scss',
+      Nav: 'app/components/Nav.jsx'
     },
     extensions: ['', '.js', '.jsx']
   },
-
   module: {
     loaders: [
       {
@@ -39,9 +37,8 @@ module.exports = {
         },
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/
-      },
-      {loaders: ['style', 'css', 'sass'], test: /\.scss$/ }
+      }
     ]
   },
-  devtool: 'inline-source-map'
+  devtool: 'cheap-module-eval-source-map'
 };
